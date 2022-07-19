@@ -1,0 +1,157 @@
+:root {
+  --soft_dark: #514869;
+  --color_dark: #201b2c;
+  /* --color_dark: #2f2841; */
+  /* --primary_color: #77ffc0; */
+  --primary_color: #00ff88df;
+  --secondary_color: #f0ffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary_color);
+  background: var(--color_dark);
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 450px;
+  /* background: var(--secondary_color); */
+  background: #ccc;
+}
+
+.timeline {
+  flex: 1;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 25px;
+}
+
+.message-box {
+  position: relative;
+
+  float: left;
+  display: inline-block;
+  clear: both;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 10px 16px;
+  max-width: 75%;
+
+  color: #333;
+  background: #fff;
+}
+
+.message-box::after {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: -10px;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+}
+
+.message-box.me {
+  float: right;
+  background: #dcf8c8;
+}
+
+.message-box.me::after {
+  left: calc(100% - 10px);
+  border-top-color: #dcf8c8;
+}
+
+.message-box header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  color: #777;
+}
+
+.message-box strong {
+  font-size: 16px;
+}
+
+.message-box span {
+  font-size: 8px;
+}
+
+.chat-box form {
+  display: flex;
+  gap: 8px;
+
+  width: 100%;
+  padding: 8px 10px;
+}
+
+.chat-box form input {
+  flex: 1;
+  padding: 16px;
+
+  border: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  border-radius: 40px;
+}
+
+.chat-box form button {
+  border: 0;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--secondary_color);
+  background: var(--primary_color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+}
